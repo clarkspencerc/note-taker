@@ -1,3 +1,16 @@
+const express = require('express'); 
+const PORT = process.env.PORT || 3001; 
+const app = express(); 
+const apiRoutes = require('./routes/apiRoutes'); 
+const htmlRoutes = require('./routes/htmlRoutes'); 
+
+const fs = require('fs'); 
+const path = require('path'); 
+const { notes } = require('./db/db.json'); 
+const req = require('express/lib/request'); 
+
+app.use(express.urlencoded({ extended: true})); 
+
 app.use(express.json()); 
 app.use(express.static('public')); 
 
