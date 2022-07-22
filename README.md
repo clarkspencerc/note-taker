@@ -13,7 +13,7 @@ how to use get and post routes
 * CSS 
 
 # Website 
-
+Deployed: https://secure-earth-07101.herokuapp.com/
 # Screenshots 
 
 ![Imgur](https://imgur.com/JgPJBiH)
