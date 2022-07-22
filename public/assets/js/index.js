@@ -1,5 +1,3 @@
-// should this file be renamed script.js? 
-// need to define these vars 
 let noteTitle;
 let noteText;
 let saveNoteBtn;

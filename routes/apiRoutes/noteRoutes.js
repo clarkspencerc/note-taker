@@ -1,16 +1,17 @@
 const router = require('express').Router(); 
-// insert required functions here from index.js/script.js whichever name you decide on
-const { notes } = require('../../db/db.json'); 
+const { createNewNote } = require('../../lib/notes'); 
+//const { getAndRenderNotes } = require('../../public/assets/js/index'); 
+const { notes } = require('../../db/notes.json'); 
 
-// GET /api/notes should read db.json file and return all saved notes as JSON 
 router.get('/notes', (req, res) =>{
     let results = notes; 
-    // am I missing a req statement? - maybe use a required funciton from index/script.js
+ //   getAndRenderNotes(); 
     res.json(results); 
 })
-// POST /api/notes should receive a new note to save on the request body,
-// add it to the db.json file and then return the new note to the client 
-// will need a unique ID for each note saved - check NPM packages for this
-
+router.post('/notes', (req, res) =>{
+    req.body.id = notes.length.toString(); 
+    const note = createNewNote(req.body, notes);
+    res.json(note); 
+});
 
 module.exports = router; 
